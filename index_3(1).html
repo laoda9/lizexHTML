@@ -1,0 +1,1247 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>商裕 | 跨境电商增长与履约伙伴</title>
+  <meta name="description" content="商裕是一家面向跨境电商企业的运营、供应链、履约与增长服务公司，帮助品牌稳定进入全球市场。">
+  <style>
+    :root {
+      --ink: #102033;
+      --muted: #5d6a79;
+      --line: #dfe6ec;
+      --soft: #f5f8fb;
+      --panel: #ffffff;
+      --navy: #0a1c30;
+      --teal: #0f8b8d;
+      --gold: #d99a2b;
+      --green: #42766c;
+      --shadow: 0 22px 60px rgba(12, 29, 48, .14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, .88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(223, 230, 236, .82);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 40px));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .brand span[data-i18n="brandName"] {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      box-shadow: 0 12px 24px rgba(15, 139, 141, .24);
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #536171;
+      font-size: 14px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      min-height: 38px;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .lang-button {
+      min-width: 42px;
+      height: 30px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: #536171;
+      cursor: pointer;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .lang-button.is-active {
+      background: var(--teal);
+      color: #fff;
+    }
+
+    .nav-cta,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 8px;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 16px 30px rgba(10, 28, 48, .18);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, .92);
+      color: var(--ink);
+      box-shadow: none;
+      border: 1px solid rgba(255, 255, 255, .5);
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 72px);
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: #fff;
+      background: var(--navy);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(6, 20, 34, .94) 0%, rgba(6, 20, 34, .78) 37%, rgba(6, 20, 34, .2) 70%, rgba(6, 20, 34, .12) 100%),
+        url("assets/hero-commerce.png") center / cover no-repeat;
+      transform: scale(1.01);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 170px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0), #fff 92%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 74px 0 130px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      color: #bce4df;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      max-width: 710px;
+      margin: 0;
+      font-size: clamp(44px, 6.4vw, 86px);
+      line-height: 1.05;
+      font-weight: 900;
+    }
+
+    body.lang-en .hero h1,
+    body.lang-ms .hero h1 {
+      max-width: 760px;
+      font-size: clamp(40px, 5.4vw, 72px);
+    }
+
+    .hero .lead {
+      max-width: 620px;
+      margin: 28px 0 34px;
+      color: rgba(255, 255, 255, .84);
+      font-size: clamp(17px, 2vw, 22px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-strip {
+      position: absolute;
+      left: 50%;
+      bottom: 24px;
+      z-index: 2;
+      width: min(1180px, calc(100% - 40px));
+      transform: translateX(-50%);
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .32);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .24);
+      box-shadow: var(--shadow);
+    }
+
+    .metric {
+      min-height: 104px;
+      padding: 20px;
+      background: rgba(255, 255, 255, .94);
+      color: var(--ink);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--navy);
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section {
+      padding: 88px 0;
+      scroll-margin-top: 92px;
+    }
+
+    section[id]::before {
+      content: "";
+      display: block;
+      height: 92px;
+      margin-top: -92px;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .section-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(280px, .52fr);
+      gap: 54px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+
+    .section-kicker {
+      margin: 0 0 10px;
+      color: var(--teal);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.15;
+      color: var(--navy);
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 245px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(15, 139, 141, .45);
+      box-shadow: 0 18px 42px rgba(12, 29, 48, .12);
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      margin-bottom: 22px;
+      color: var(--teal);
+      background: #e7f5f3;
+    }
+
+    .icon svg {
+      width: 23px;
+      height: 23px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: var(--navy);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .workflow {
+      background: var(--soft);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      min-height: 230px;
+      padding: 28px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      display: inline-flex;
+      width: 48px;
+      height: 48px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 26px;
+      border-radius: 8px;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .step::after {
+      content: "";
+      position: absolute;
+      right: -30px;
+      top: -30px;
+      width: 90px;
+      height: 90px;
+      border: 18px solid rgba(15, 139, 141, .12);
+      border-radius: 50%;
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .markets-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .market-panel {
+      padding: 36px;
+      border-radius: 8px;
+      background: var(--navy);
+      color: #fff;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .market-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(15, 139, 141, .42), rgba(217, 154, 43, .12)),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, .08) 0 1px, transparent 1px 78px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, .06) 0 1px, transparent 1px 78px);
+      opacity: .82;
+    }
+
+    .market-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .market-panel h2 {
+      color: #fff;
+      max-width: 480px;
+    }
+
+    .market-panel p {
+      max-width: 520px;
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, .76);
+    }
+
+    .market-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 36px;
+    }
+
+    .market-tags span {
+      display: inline-flex;
+      min-height: 34px;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .18);
+      color: rgba(255, 255, 255, .9);
+      font-size: 13px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .proof {
+      min-height: 201px;
+      padding: 26px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .proof strong {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--navy);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .proof h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .proof p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cta {
+      padding: 80px 0;
+      background: #102033;
+      color: #fff;
+    }
+
+    .cta-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(280px, .5fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      color: #fff;
+      max-width: 680px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      color: rgba(255, 255, 255, .72);
+      margin: 18px 0 0;
+    }
+
+    .contact-box {
+      padding: 28px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .16);
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .82);
+      font-size: 14px;
+    }
+
+    .contact-row:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-row b {
+      min-width: 92px;
+      color: #fff;
+    }
+
+    .site-footer {
+      padding: 30px 0;
+      background: #081522;
+      color: rgba(255, 255, 255, .62);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 760px;
+      }
+
+      .hero-strip,
+      .capability-grid,
+      .timeline,
+      .markets-layout,
+      .cta-inner,
+      .section-head {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-head,
+      .markets-layout,
+      .cta-inner {
+        gap: 26px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav {
+        width: min(100% - 20px, 1180px);
+        min-height: 64px;
+        gap: 8px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-actions {
+        gap: 6px;
+      }
+
+      .lang-button {
+        min-width: 32px;
+      }
+
+      .brand {
+        gap: 8px;
+        font-size: 16px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+      }
+
+      .hero {
+        min-height: 850px;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(180deg, rgba(6, 20, 34, .96) 0%, rgba(6, 20, 34, .86) 54%, rgba(6, 20, 34, .4) 100%),
+          url("assets/hero-commerce.png") center / cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(100% - 28px, 1180px);
+        padding: 58px 0 260px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      body.lang-en .hero h1,
+      body.lang-ms .hero h1 {
+        font-size: 39px;
+      }
+
+      .hero-strip {
+        width: min(100% - 28px, 1180px);
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .metric {
+        min-height: 94px;
+        padding: 18px;
+      }
+
+      .metric strong {
+        font-size: 24px;
+      }
+
+      section {
+        padding: 66px 0;
+      }
+
+      .section-inner,
+      .cta-inner,
+      .footer-inner {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .section-head,
+      .capability-grid,
+      .timeline,
+      .markets-layout,
+      .proof-grid,
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .card,
+      .step,
+      .proof,
+      .market-panel,
+      .contact-box {
+        padding: 22px;
+      }
+
+      .market-panel {
+        min-height: 360px;
+      }
+
+      .contact-row {
+        display: block;
+      }
+
+      .contact-row b {
+        display: block;
+        min-width: 0;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主导航" data-i18n-attr="aria-label:navAria">
+      <a class="brand" href="#top" aria-label="商裕首页" data-i18n-attr="aria-label:brandAria">
+        <span class="brand-mark" data-i18n="brandMark">商</span>
+        <span data-i18n="brandName">商裕</span>
+      </a>
+      <div class="nav-links">
+        <a href="#services" data-i18n="navServices">服务能力</a>
+        <a href="#workflow" data-i18n="navWorkflow">合作流程</a>
+        <a href="#markets" data-i18n="navMarkets">全球市场</a>
+        <a href="#contact" data-i18n="navContact">联系我们</a>
+      </div>
+      <div class="nav-actions">
+        <div class="lang-switcher" role="group" aria-label="语言切换" data-i18n-attr="aria-label:langSwitchAria">
+          <button class="lang-button is-active" type="button" data-lang="zh" aria-pressed="true">中</button>
+          <button class="lang-button" type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-button" type="button" data-lang="ms" aria-pressed="false">BM</button>
+        </div>
+        <a class="nav-cta" href="#contact" data-i18n="navCta">获取方案</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="商裕跨境电商主页首屏" data-i18n-attr="aria-label:heroAria">
+      <div class="hero-inner">
+        <div class="eyebrow" data-i18n="heroEyebrow">跨境电商运营与履约伙伴</div>
+        <h1 data-i18n="heroTitle">商裕，让中国好货稳健走向全球市场</h1>
+        <p class="lead" data-i18n="heroLead">从选品、店铺运营、内容增长到海外仓履约，商裕帮助品牌建立可复制、可追踪、可持续的跨境电商生意系统。</p>
+        <div class="hero-actions">
+          <a class="button" href="#contact" data-i18n="heroPrimary">预约业务沟通</a>
+          <a class="button secondary" href="#services" data-i18n="heroSecondary">查看服务能力</a>
+        </div>
+      </div>
+      <div class="hero-strip" aria-label="业务数据亮点" data-i18n-attr="aria-label:metricsAria">
+        <div class="metric">
+          <strong>20+</strong>
+          <span data-i18n="metricOne">覆盖主流跨境平台与独立站场景</span>
+        </div>
+        <div class="metric">
+          <strong>48h</strong>
+          <span data-i18n="metricTwo">完成店铺与商品诊断初版方案</span>
+        </div>
+        <div class="metric">
+          <strong>6</strong>
+          <span data-i18n="metricThree">核心环节形成闭环运营机制</span>
+        </div>
+        <div class="metric">
+          <strong data-i18n="metricFourValue">1站式</strong>
+          <span data-i18n="metricFour">连接增长、供应链与履约交付</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">SERVICE CAPABILITY</p>
+            <h2 data-i18n="servicesTitle">不只开店，更搭建能长期跑通的跨境经营系统</h2>
+          </div>
+          <p class="section-copy" data-i18n="servicesCopy">商裕围绕真实交易结果拆解跨境业务，把平台规则、商品供给、内容投放、订单履约和复盘数据连在一起，减少试错成本。</p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16M7 4h10l3 3v13H4V7l3-3Z"/><path d="M9 12h6M9 16h4"/></svg>
+            </div>
+            <h3 data-i18n="serviceOneTitle">平台运营</h3>
+            <p data-i18n="serviceOneCopy">覆盖店铺搭建、商品上架、规则适配、活动节奏和日常数据复盘，帮助团队把运营动作标准化。</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 8h14"/><path d="m7 8 2 8h6l2-8"/><path d="M8 21h8"/></svg>
+            </div>
+            <h3 data-i18n="serviceTwoTitle">选品与供应链</h3>
+            <p data-i18n="serviceTwoCopy">从价格带、卖点、库存深度到交付风险做前置判断，避免只靠感觉推品造成库存压力。</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 13a8 8 0 1 1 16 0"/><path d="M12 13l5-5"/><path d="M6 19h12"/></svg>
+            </div>
+            <h3 data-i18n="serviceThreeTitle">内容增长</h3>
+            <p data-i18n="serviceThreeCopy">结合短视频、素材库、广告测试和达人合作，把内容从一次性发布变成持续迭代的增长资产。</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 7h12v10H3z"/><path d="M15 10h4l2 3v4h-6z"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg>
+            </div>
+            <h3 data-i18n="serviceFourTitle">履约交付</h3>
+            <p data-i18n="serviceFourCopy">对接国内发货、跨境物流、海外仓与售后反馈，提升客户体验，也让运营能看清每笔订单的成本。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="workflow">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">WORKFLOW</p>
+            <h2 data-i18n="workflowTitle">四步推进，从诊断到增长闭环</h2>
+          </div>
+          <p class="section-copy" data-i18n="workflowCopy">我们把合作过程拆成清晰阶段，让每次沟通都有输入、输出和负责人，避免项目只停留在建议层面。</p>
+        </div>
+
+        <div class="timeline">
+          <article class="step">
+            <h3 data-i18n="stepOneTitle">业务诊断</h3>
+            <p data-i18n="stepOneCopy">梳理类目、供应链、当前店铺、内容资产与目标市场，找出最值得先解决的问题。</p>
+          </article>
+          <article class="step">
+            <h3 data-i18n="stepTwoTitle">方案共建</h3>
+            <p data-i18n="stepTwoCopy">明确平台、商品、预算、库存和人员分工，形成可以执行的月度节奏与指标看板。</p>
+          </article>
+          <article class="step">
+            <h3 data-i18n="stepThreeTitle">执行落地</h3>
+            <p data-i18n="stepThreeCopy">推进上架、素材、投放、活动和履约配置，把关键动作拆到周，并持续记录结果。</p>
+          </article>
+          <article class="step">
+            <h3 data-i18n="stepFourTitle">复盘增长</h3>
+            <p data-i18n="stepFourCopy">围绕转化、成本、库存和口碑做复盘，保留有效打法，快速淘汰低效动作。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="markets">
+      <div class="section-inner markets-layout">
+        <div class="market-panel">
+          <div>
+            <p class="section-kicker">GLOBAL MARKET</p>
+            <h2 data-i18n="marketsTitle">面向多市场经营，先跑通，再放大</h2>
+            <p data-i18n="marketsCopy">商裕关注不同市场的平台规则、消费者偏好、物流时效和售后预期，帮助品牌选择更适合自己的进入路径。</p>
+          </div>
+          <div class="market-tags" aria-label="市场方向" data-i18n-attr="aria-label:marketTagsAria">
+            <span data-i18n="marketTagOne">东南亚</span>
+            <span data-i18n="marketTagTwo">北美</span>
+            <span data-i18n="marketTagThree">欧洲</span>
+            <span data-i18n="marketTagFour">中东</span>
+            <span data-i18n="marketTagFive">拉美</span>
+            <span data-i18n="marketTagSix">独立站</span>
+          </div>
+        </div>
+
+        <div class="proof-grid">
+          <article class="proof">
+            <strong>01</strong>
+            <h3 data-i18n="proofOneTitle">商品卖点本地化</h3>
+            <p data-i18n="proofOneCopy">把中文卖点转成目标市场能理解、愿意下单的表达，减少“看得懂但不想买”的损耗。</p>
+          </article>
+          <article class="proof">
+            <strong>02</strong>
+            <h3 data-i18n="proofTwoTitle">运营节奏可追踪</h3>
+            <p data-i18n="proofTwoCopy">用固定周报和数据看板跟踪曝光、点击、转化、客诉和库存，让决策回到事实。</p>
+          </article>
+          <article class="proof">
+            <strong>03</strong>
+            <h3 data-i18n="proofThreeTitle">履约成本前置测算</h3>
+            <p data-i18n="proofThreeCopy">在推广前先估算运费、仓储、退换与平台费用，避免卖得越多利润越薄。</p>
+          </article>
+          <article class="proof">
+            <strong>04</strong>
+            <h3 data-i18n="proofFourTitle">团队能力沉淀</h3>
+            <p data-i18n="proofFourCopy">每个阶段留下清单、模板和复盘记录，让企业逐步拥有自己的跨境运营方法库。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="cta-inner">
+        <div>
+          <p class="section-kicker">CONTACT</p>
+          <h2 data-i18n="contactTitle">把你的商品、市场和当前问题发给商裕，我们给出第一版跨境增长建议</h2>
+          <p data-i18n="contactCopy">适合已有产品、准备出海、店铺增长遇到瓶颈，或希望把内容、供应链和履约统一管理的团队。</p>
+        </div>
+        <div class="contact-box" aria-label="联系方式" data-i18n-attr="aria-label:contactAria">
+          <div class="contact-row">
+            <b data-i18n="contactCompanyLabel">公司</b>
+            <span data-i18n="contactCompany">深圳市商裕数码科技有限公司</span>
+          </div>
+          <div class="contact-row">
+            <b data-i18n="contactPhoneLabel">电话</b>
+            <span>+86 13980841416</span>
+          </div>
+          <div class="contact-row">
+            <b>Whatsapp</b>
+            <span>+852 66508540</span>
+          </div>
+          <div class="contact-row">
+            <b data-i18n="contactWechatLabel">微信</b>
+            <span>Q7DoII16_Gin</span>
+          </div>
+          <div class="contact-row">
+            <b data-i18n="contactEmailLabel">邮箱</b>
+            <span>gg836186756@gmail.com</span>
+          </div>
+          <div class="contact-row">
+            <b data-i18n="contactAddressLabel">地址</b>
+            <span data-i18n="contactAddress">广东深圳市龙岗区金源嘉科技园办公楼2栋301</span>
+          </div>
+          <a class="button" href="mailto:gg836186756@gmail.com" data-i18n="contactButton">发送合作需求</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span data-i18n="footerCopyright">© 2026 深圳市商裕数码科技有限公司. All rights reserved.</span>
+      <span data-i18n="footerTagline">Cross-border ecommerce operations, growth and fulfillment.</span>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      zh: {
+        pageTitle: "商裕 | 跨境电商增长与履约伙伴",
+        metaDescription: "商裕是一家面向跨境电商企业的运营、供应链、履约与增长服务公司，帮助品牌稳定进入全球市场。",
+        navAria: "主导航",
+        brandAria: "商裕首页",
+        brandMark: "商",
+        brandName: "商裕",
+        navServices: "服务能力",
+        navWorkflow: "合作流程",
+        navMarkets: "全球市场",
+        navContact: "联系我们",
+        navCta: "获取方案",
+        langSwitchAria: "语言切换",
+        heroAria: "商裕跨境电商主页首屏",
+        heroEyebrow: "跨境电商运营与履约伙伴",
+        heroTitle: "商裕，让中国好货稳健走向全球市场",
+        heroLead: "从选品、店铺运营、内容增长到海外仓履约，商裕帮助品牌建立可复制、可追踪、可持续的跨境电商生意系统。",
+        heroPrimary: "预约业务沟通",
+        heroSecondary: "查看服务能力",
+        metricsAria: "业务数据亮点",
+        metricOne: "覆盖主流跨境平台与独立站场景",
+        metricTwo: "完成店铺与商品诊断初版方案",
+        metricThree: "核心环节形成闭环运营机制",
+        metricFourValue: "1站式",
+        metricFour: "连接增长、供应链与履约交付",
+        servicesTitle: "不只开店，更搭建能长期跑通的跨境经营系统",
+        servicesCopy: "商裕围绕真实交易结果拆解跨境业务，把平台规则、商品供给、内容投放、订单履约和复盘数据连在一起，减少试错成本。",
+        serviceOneTitle: "平台运营",
+        serviceOneCopy: "覆盖店铺搭建、商品上架、规则适配、活动节奏和日常数据复盘，帮助团队把运营动作标准化。",
+        serviceTwoTitle: "选品与供应链",
+        serviceTwoCopy: "从价格带、卖点、库存深度到交付风险做前置判断，避免只靠感觉推品造成库存压力。",
+        serviceThreeTitle: "内容增长",
+        serviceThreeCopy: "结合短视频、素材库、广告测试和达人合作，把内容从一次性发布变成持续迭代的增长资产。",
+        serviceFourTitle: "履约交付",
+        serviceFourCopy: "对接国内发货、跨境物流、海外仓与售后反馈，提升客户体验，也让运营能看清每笔订单的成本。",
+        workflowTitle: "四步推进，从诊断到增长闭环",
+        workflowCopy: "我们把合作过程拆成清晰阶段，让每次沟通都有输入、输出和负责人，避免项目只停留在建议层面。",
+        stepOneTitle: "业务诊断",
+        stepOneCopy: "梳理类目、供应链、当前店铺、内容资产与目标市场，找出最值得先解决的问题。",
+        stepTwoTitle: "方案共建",
+        stepTwoCopy: "明确平台、商品、预算、库存和人员分工，形成可以执行的月度节奏与指标看板。",
+        stepThreeTitle: "执行落地",
+        stepThreeCopy: "推进上架、素材、投放、活动和履约配置，把关键动作拆到周，并持续记录结果。",
+        stepFourTitle: "复盘增长",
+        stepFourCopy: "围绕转化、成本、库存和口碑做复盘，保留有效打法，快速淘汰低效动作。",
+        marketsTitle: "面向多市场经营，先跑通，再放大",
+        marketsCopy: "商裕关注不同市场的平台规则、消费者偏好、物流时效和售后预期，帮助品牌选择更适合自己的进入路径。",
+        marketTagsAria: "市场方向",
+        marketTagOne: "东南亚",
+        marketTagTwo: "北美",
+        marketTagThree: "欧洲",
+        marketTagFour: "中东",
+        marketTagFive: "拉美",
+        marketTagSix: "独立站",
+        proofOneTitle: "商品卖点本地化",
+        proofOneCopy: "把中文卖点转成目标市场能理解、愿意下单的表达，减少“看得懂但不想买”的损耗。",
+        proofTwoTitle: "运营节奏可追踪",
+        proofTwoCopy: "用固定周报和数据看板跟踪曝光、点击、转化、客诉和库存，让决策回到事实。",
+        proofThreeTitle: "履约成本前置测算",
+        proofThreeCopy: "在推广前先估算运费、仓储、退换与平台费用，避免卖得越多利润越薄。",
+        proofFourTitle: "团队能力沉淀",
+        proofFourCopy: "每个阶段留下清单、模板和复盘记录，让企业逐步拥有自己的跨境运营方法库。",
+        contactTitle: "把你的商品、市场和当前问题发给商裕，我们给出第一版跨境增长建议",
+        contactCopy: "适合已有产品、准备出海、店铺增长遇到瓶颈，或希望把内容、供应链和履约统一管理的团队。",
+        contactAria: "联系方式",
+        contactCompanyLabel: "公司",
+        contactCompany: "深圳市商裕数码科技有限公司",
+        contactPhoneLabel: "电话",
+        contactWechatLabel: "微信",
+        contactEmailLabel: "邮箱",
+        contactAddressLabel: "地址",
+        contactAddress: "广东深圳市龙岗区金源嘉科技园办公楼2栋301",
+        contactButton: "发送合作需求",
+        footerCopyright: "© 2026 深圳市商裕数码科技有限公司. All rights reserved.",
+        footerTagline: "Cross-border ecommerce operations, growth and fulfillment."
+      },
+      en: {
+        pageTitle: "Shenzhen, Shangyu | Cross-Border Ecommerce Growth and Fulfillment Partner",
+        metaDescription: "Shenzhen, Shangyu provides operations, supply chain, fulfillment, and growth services for cross-border ecommerce teams entering global markets.",
+        navAria: "Primary navigation",
+        brandAria: "Shenzhen, Shangyu home",
+        brandMark: "SY",
+        brandName: "Shenzhen, Shangyu",
+        navServices: "Services",
+        navWorkflow: "Workflow",
+        navMarkets: "Markets",
+        navContact: "Contact",
+        navCta: "Get a Plan",
+        langSwitchAria: "Language switcher",
+        heroAria: "Shenzhen, Shangyu cross-border ecommerce homepage hero",
+        heroEyebrow: "Cross-border ecommerce operations and fulfillment partner",
+        heroTitle: "Shenzhen, Shangyu helps quality Chinese products reach global markets",
+        heroLead: "From product selection, store operations, and content growth to overseas warehousing and fulfillment, we help brands build a repeatable, trackable, and sustainable ecommerce system.",
+        heroPrimary: "Book a Consultation",
+        heroSecondary: "View Services",
+        metricsAria: "Business highlights",
+        metricOne: "Mainstream marketplace and independent-site scenarios",
+        metricTwo: "Initial store and product diagnosis within 48 hours",
+        metricThree: "Core operating links connected into one loop",
+        metricFourValue: "One-stop",
+        metricFour: "Growth, supply chain, and fulfillment support",
+        servicesTitle: "Beyond store setup, we build cross-border systems that can keep running",
+        servicesCopy: "Shenzhen, Shangyu breaks cross-border ecommerce down around real transaction outcomes, connecting platform rules, product supply, content, order fulfillment, and review data to reduce trial-and-error costs.",
+        serviceOneTitle: "Platform Operations",
+        serviceOneCopy: "Store setup, product listing, rule adaptation, campaign rhythm, and routine data reviews that make operations more standardized.",
+        serviceTwoTitle: "Product and Supply Chain",
+        serviceTwoCopy: "We assess price bands, selling points, inventory depth, and delivery risks before launch to avoid stock pressure caused by guesswork.",
+        serviceThreeTitle: "Content Growth",
+        serviceThreeCopy: "Short videos, asset libraries, ad testing, and creator cooperation turn content from one-off publishing into a reusable growth asset.",
+        serviceFourTitle: "Fulfillment Delivery",
+        serviceFourCopy: "Domestic shipping, cross-border logistics, overseas warehouses, and after-sales feedback are connected so teams can see the real cost of each order.",
+        workflowTitle: "A four-step path from diagnosis to growth loop",
+        workflowCopy: "We divide cooperation into clear stages so every discussion has inputs, outputs, and owners instead of stopping at advice.",
+        stepOneTitle: "Business Diagnosis",
+        stepOneCopy: "Review categories, supply chain, current stores, content assets, and target markets to identify the issues worth solving first.",
+        stepTwoTitle: "Plan Building",
+        stepTwoCopy: "Clarify platforms, products, budget, inventory, and team responsibilities, then turn them into a monthly rhythm and KPI dashboard.",
+        stepThreeTitle: "Execution",
+        stepThreeCopy: "Move listings, creative assets, ads, campaigns, and fulfillment setup into weekly actions with ongoing result tracking.",
+        stepFourTitle: "Review and Scale",
+        stepFourCopy: "Review conversion, cost, inventory, and customer feedback, keep what works, and quickly remove inefficient actions.",
+        marketsTitle: "Multi-market operations: prove the model first, then scale",
+        marketsCopy: "Shenzhen, Shangyu studies platform rules, consumer preferences, logistics timing, and after-sales expectations across markets to help brands choose a suitable entry path.",
+        marketTagsAria: "Market directions",
+        marketTagOne: "Southeast Asia",
+        marketTagTwo: "North America",
+        marketTagThree: "Europe",
+        marketTagFour: "Middle East",
+        marketTagFive: "Latin America",
+        marketTagSix: "Independent Site",
+        proofOneTitle: "Localized Selling Points",
+        proofOneCopy: "Turn Chinese product benefits into language that target-market buyers understand and act on.",
+        proofTwoTitle: "Trackable Operating Rhythm",
+        proofTwoCopy: "Weekly reports and dashboards track exposure, clicks, conversion, complaints, and inventory so decisions return to facts.",
+        proofThreeTitle: "Fulfillment Cost Forecasting",
+        proofThreeCopy: "Estimate freight, storage, returns, and platform fees before promotion to avoid selling more while earning less.",
+        proofFourTitle: "Team Capability Building",
+        proofFourCopy: "Each stage leaves checklists, templates, and review records so the company gradually builds its own playbook.",
+        contactTitle: "Send Shenzhen, Shangyu your product, market, and current challenge for an initial growth recommendation",
+        contactCopy: "For teams with existing products, export plans, store-growth bottlenecks, or a need to manage content, supply chain, and fulfillment together.",
+        contactAria: "Contact information",
+        contactCompanyLabel: "Company",
+        contactCompany: "Shenzhen, Shangyu",
+        contactPhoneLabel: "Phone",
+        contactWechatLabel: "WeChat",
+        contactEmailLabel: "Email",
+        contactAddressLabel: "Address",
+        contactAddress: "Room 301, Building 2, Jinyuanjia Technology Park Office Building, Longgang District, Shenzhen, Guangdong, China",
+        contactButton: "Send Inquiry",
+        footerCopyright: "© 2026 Shenzhen, Shangyu. All rights reserved.",
+        footerTagline: "Cross-border ecommerce operations, growth and fulfillment."
+      },
+      ms: {
+        pageTitle: "Shenzhen, Shangyu | Rakan Pertumbuhan dan Pemenuhan E-dagang Rentas Sempadan",
+        metaDescription: "Shenzhen, Shangyu menyediakan operasi, rantaian bekalan, pemenuhan dan perkhidmatan pertumbuhan untuk pasukan e-dagang rentas sempadan.",
+        navAria: "Navigasi utama",
+        brandAria: "Laman utama Shenzhen, Shangyu",
+        brandMark: "SY",
+        brandName: "Shenzhen, Shangyu",
+        navServices: "Perkhidmatan",
+        navWorkflow: "Aliran Kerja",
+        navMarkets: "Pasaran",
+        navContact: "Hubungi",
+        navCta: "Dapatkan Pelan",
+        langSwitchAria: "Penukar bahasa",
+        heroAria: "Hero laman utama e-dagang rentas sempadan Shenzhen, Shangyu",
+        heroEyebrow: "Rakan operasi dan pemenuhan e-dagang rentas sempadan",
+        heroTitle: "Shenzhen, Shangyu membantu produk China yang berkualiti memasuki pasaran global",
+        heroLead: "Daripada pemilihan produk, operasi kedai dan pertumbuhan kandungan hingga gudang luar negara dan pemenuhan, kami membantu jenama membina sistem e-dagang yang boleh diulang, dijejaki dan dikembangkan.",
+        heroPrimary: "Tempah Perbincangan",
+        heroSecondary: "Lihat Perkhidmatan",
+        metricsAria: "Sorotan perniagaan",
+        metricOne: "Senario platform utama dan laman bebas",
+        metricTwo: "Diagnosis awal kedai dan produk dalam 48 jam",
+        metricThree: "Pautan operasi utama disambung dalam satu gelung",
+        metricFourValue: "Sehenti",
+        metricFour: "Sokongan pertumbuhan, rantaian bekalan dan pemenuhan",
+        servicesTitle: "Bukan sekadar membuka kedai, kami membina sistem rentas sempadan yang boleh berjalan lama",
+        servicesCopy: "Shenzhen, Shangyu memecahkan operasi e-dagang rentas sempadan berdasarkan hasil transaksi sebenar, menyambungkan peraturan platform, bekalan produk, kandungan, pemenuhan pesanan dan data semakan untuk mengurangkan kos cuba-jaya.",
+        serviceOneTitle: "Operasi Platform",
+        serviceOneCopy: "Pembinaan kedai, penyenaraian produk, penyesuaian peraturan, rentak kempen dan semakan data rutin supaya tindakan operasi menjadi lebih standard.",
+        serviceTwoTitle: "Produk dan Rantaian Bekalan",
+        serviceTwoCopy: "Kami menilai julat harga, titik jualan, kedalaman stok dan risiko penghantaran lebih awal bagi mengelakkan tekanan inventori akibat tekaan.",
+        serviceThreeTitle: "Pertumbuhan Kandungan",
+        serviceThreeCopy: "Video pendek, perpustakaan aset, ujian iklan dan kerjasama pencipta menjadikan kandungan sebagai aset pertumbuhan yang boleh digunakan semula.",
+        serviceFourTitle: "Pemenuhan dan Penghantaran",
+        serviceFourCopy: "Penghantaran domestik, logistik rentas sempadan, gudang luar negara dan maklum balas selepas jualan disambungkan supaya pasukan dapat melihat kos sebenar setiap pesanan.",
+        workflowTitle: "Empat langkah daripada diagnosis kepada gelung pertumbuhan",
+        workflowCopy: "Kami membahagikan kerjasama kepada peringkat yang jelas supaya setiap perbincangan mempunyai input, output dan pemilik, bukan berhenti pada cadangan sahaja.",
+        stepOneTitle: "Diagnosis Perniagaan",
+        stepOneCopy: "Semak kategori, rantaian bekalan, kedai semasa, aset kandungan dan pasaran sasaran untuk mengenal pasti isu yang patut diselesaikan dahulu.",
+        stepTwoTitle: "Pembinaan Pelan",
+        stepTwoCopy: "Jelaskan platform, produk, bajet, inventori dan tanggungjawab pasukan, kemudian jadikan semuanya rentak bulanan dan papan pemuka KPI.",
+        stepThreeTitle: "Pelaksanaan",
+        stepThreeCopy: "Gerakkan penyenaraian, aset kreatif, iklan, kempen dan konfigurasi pemenuhan kepada tindakan mingguan dengan rekod hasil berterusan.",
+        stepFourTitle: "Semakan dan Skala",
+        stepFourCopy: "Semak penukaran, kos, inventori dan maklum balas pelanggan, kekalkan taktik berkesan dan singkirkan tindakan yang lemah.",
+        marketsTitle: "Operasi pelbagai pasaran: buktikan model dahulu, kemudian besarkan",
+        marketsCopy: "Shenzhen, Shangyu meneliti peraturan platform, pilihan pengguna, masa logistik dan jangkaan selepas jualan di pelbagai pasaran untuk membantu jenama memilih laluan masuk yang sesuai.",
+        marketTagsAria: "Arah pasaran",
+        marketTagOne: "Asia Tenggara",
+        marketTagTwo: "Amerika Utara",
+        marketTagThree: "Eropah",
+        marketTagFour: "Timur Tengah",
+        marketTagFive: "Amerika Latin",
+        marketTagSix: "Laman Bebas",
+        proofOneTitle: "Titik Jualan Setempat",
+        proofOneCopy: "Tukar kelebihan produk dalam bahasa Cina kepada ungkapan yang difahami dan mendorong tindakan pembeli sasaran.",
+        proofTwoTitle: "Rentak Operasi Boleh Dijejaki",
+        proofTwoCopy: "Laporan mingguan dan papan pemuka menjejak pendedahan, klik, penukaran, aduan dan inventori supaya keputusan kembali kepada fakta.",
+        proofThreeTitle: "Ramalan Kos Pemenuhan",
+        proofThreeCopy: "Anggarkan tambang, penyimpanan, pemulangan dan yuran platform sebelum promosi supaya jualan tidak meningkat tanpa margin.",
+        proofFourTitle: "Pembinaan Keupayaan Pasukan",
+        proofFourCopy: "Setiap peringkat meninggalkan senarai semak, templat dan rekod semakan supaya syarikat membina buku panduan sendiri.",
+        contactTitle: "Hantar produk, pasaran dan cabaran semasa anda kepada Shenzhen, Shangyu untuk cadangan pertumbuhan awal",
+        contactCopy: "Sesuai untuk pasukan yang sudah mempunyai produk, rancangan eksport, halangan pertumbuhan kedai, atau mahu mengurus kandungan, rantaian bekalan dan pemenuhan bersama.",
+        contactAria: "Maklumat hubungan",
+        contactCompanyLabel: "Syarikat",
+        contactCompany: "Shenzhen, Shangyu",
+        contactPhoneLabel: "Telefon",
+        contactWechatLabel: "WeChat",
+        contactEmailLabel: "E-mel",
+        contactAddressLabel: "Alamat",
+        contactAddress: "Bilik 301, Bangunan 2, Bangunan Pejabat Taman Teknologi Jinyuanjia, Daerah Longgang, Shenzhen, Guangdong, China",
+        contactButton: "Hantar Pertanyaan",
+        footerCopyright: "© 2026 Shenzhen, Shangyu. All rights reserved.",
+        footerTagline: "Operasi, pertumbuhan dan pemenuhan e-dagang rentas sempadan."
+      }
+    };
+
+    const langButtons = document.querySelectorAll("[data-lang]");
+    const metaDescription = document.querySelector('meta[name="description"]');
+
+    function applyLanguage(lang) {
+      const dictionary = translations[lang] || translations.zh;
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : lang === "ms" ? "ms-MY" : "en";
+      document.body.classList.remove("lang-zh", "lang-en", "lang-ms");
+      document.body.classList.add(`lang-${lang}`);
+      document.title = dictionary.pageTitle;
+      if (metaDescription) {
+        metaDescription.setAttribute("content", dictionary.metaDescription);
+      }
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-attr]").forEach((element) => {
+        element.dataset.i18nAttr.split(",").forEach((pair) => {
+          const [attr, key] = pair.split(":").map((item) => item.trim());
+          if (attr && key && dictionary[key]) {
+            element.setAttribute(attr, dictionary[key]);
+          }
+        });
+      });
+
+      langButtons.forEach((button) => {
+        const isActive = button.dataset.lang === lang;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+      try {
+        localStorage.setItem("shangyu-language", lang);
+      } catch (error) {
+        window.__shangyuLanguage = lang;
+      }
+    }
+
+    langButtons.forEach((button) => {
+      button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+    });
+
+    let savedLanguage = "zh";
+    try {
+      savedLanguage = localStorage.getItem("shangyu-language") || "zh";
+    } catch (error) {
+      savedLanguage = window.__shangyuLanguage || "zh";
+    }
+    applyLanguage(savedLanguage);
+  </script>
+</body>
+</html>
